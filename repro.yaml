@@ -3,4 +3,4 @@ team: aimslabs                  # exactly as registered on macvi.org
 track: eurs-t2
 submission_id: 19380            # aimslabs_t2_final, user 1995, composite 0.430 (t2_usms05k20_74)
 contact: you@example.org        # TODO: an address the team checks during Oct 28-30
-hardware: Jetson AGX Orin (TensorRT 10.16 FP16); export on CPU
+hardware: Jetson AGX Orin (TensorRT 10.16 FP16), export on CPU

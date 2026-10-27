@@ -1,4 +1,4 @@
-# onnx/ (Track 2 only; delete this folder if you entered only Track 1)
+# onnx/ (Track 2 only, delete this folder if you entered only Track 1)
 
 Put a copy of the exact ONNX file you uploaded to the leaderboard for your reported submission here, named `submitted_model.onnx`:
 
