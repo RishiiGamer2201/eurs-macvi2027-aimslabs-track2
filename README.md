@@ -24,7 +24,8 @@ Inside the organizers' base image:
 ```bash
 docker build -t eurs-base docker/
 mkdir -p out
-docker run --rm --network none -v "$PWD":/pkg:ro -v "$PWD/out":/out \n  eurs-base python /pkg/export_onnx.py /pkg/weights /out/model.onnx
+docker run --rm --network none -v "$PWD":/pkg:ro -v "$PWD/out":/out \
+  eurs-base python /pkg/export_onnx.py /pkg/weights /out/model.onnx
 ```
 
 ONNX: static input (1, 3, 384, 768) RGB in [0, 1], outputs `restored_image` and `seg_logits`, opset 17, 0.737 M parameters,

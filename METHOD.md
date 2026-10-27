@@ -52,7 +52,7 @@ x ─┬─> restorer (0.42 M) ─> unsharp mask y + 2.0 (y - G_0.5(y)) ─> res
   on the 20 EURS scenes); it is used only during training and is not in the ONNX. The restorer's dev targets come
   from our Restormer-based Track 1 restorer, initialised from the public `real_denoising.pth` weights (MIT;
   https://github.com/swz30/Restormer); it only generates training targets and is not in the ONNX.
-- Training: restorer 3 stages (30k + 20k + 5k iterations, L1 + 0.2 SSIM + 0.3 j0 + 0.05 cell classification);
+- Training: restorer 3 stages (30k + 20k + 5k iterations, L1(pred,y) + 0.2*(1-SSIM(pred,y)) + 0.3*L1(clamp(j0,0,1),y) + 0.05*CE(cell_logits,cell));
   student 40k iterations, batch 8, crop 512 on the squashed 384x768 geometry, weighted CE + Dice on GT +
   KL(teacher || student) at T = 2 + feature distillation, student in FP32 with an FP16 teacher forward, seed 3.
 
